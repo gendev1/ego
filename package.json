@@ -1,0 +1,34 @@
+{
+    "name": "ego",
+    "version": "0.1.0",
+    "private": true,
+    "description": "ego: a bare-bones Boardy-style connector agent on pi-durable. One agent, one memory, a profile per person, double opt-in intros. Text only.",
+    "type": "module",
+    "scripts": {
+        "chat": "node src/cli.ts",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "check": "tsc --noEmit && vitest run",
+        "test:cockroach": "EGO_TEST_STORAGE=cockroach vitest run"
+    },
+    "dependencies": {
+        "@earendil-works/chord": "1.5.2",
+        "@earendil-works/pi-ai": "1.5.2",
+        "@earendil-works/pi-durable": "1.5.2",
+        "@earendil-works/pi-schema": "1.5.2"
+    },
+    "devDependencies": {
+        "@types/node": "^22.20.5",
+        "@types/pg": "^8.23.1",
+        "pg": "^8.23.1",
+        "typescript": "7.0.2",
+        "vitest": "5.1.0"
+    },
+    "engines": {
+        "node": ">=22.19.0"
+    },
+    "optionalDependencies": {
+        "pi-durable-cockroach": "file:../pi-durable-cockroach"
+    },
+    "license": "MIT"
+}
